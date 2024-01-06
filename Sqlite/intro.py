@@ -20,17 +20,19 @@ c = conn.cursor() #cursor is used to execute sql commands
 #           WHERE rowid=2
 # """)
 #commit changes
-# c.execute("INSERT INTO customers VALUES('jane', 'downsbrery', 'jane@gmail.com')")
+# c.execute("INSERT INTO customers VALUES('maurice', 'maina', 'maina@gmail.com')")
 
-# c.execute("DELETE from customers WHERE rowid=2")
+# c.execute("DELETE from customers WHERE rowid=1")
 
+# c.execute("drop table customers")
 # conn.commit()
 
-
-c.execute("SELECT rowid, * FROM customers ORDER BY last_name")
+# c.execute("select * from customers limit 2")
+# c.execute("select rowid, * from customers where first_name like '%ce' or last_name like 'ba%' ")
+# c.execute("SELECT rowid, * FROM customers ORDER BY rowid")
 # c.execute("select rowid, * from customers order by rowid desc")
-# c.execute("SELECT  rowid, * FROM customers")
-# rowid - primary key
+c.execute("SELECT  rowid, * FROM customers")
+# rowid -> primary key
 # print(c.fetchone()[2])
 # print(c.fetchmany(2))
 
@@ -56,7 +58,7 @@ for item in items:
 
 # c.execute("INSERT INTO customers VALUES('maurice', 'maina', 'maina@gmail.com')")
 
-conn.commit()
+# conn.commit()
 
 #close connection(optional)
-conn.close()
+# conn.close()
