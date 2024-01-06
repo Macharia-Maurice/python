@@ -1,18 +1,21 @@
 import sqlite3
 
-# create a connection to our db
-
+# establish a connection to our db
 conn= sqlite3.connect('customer.db')
 
-# create a cursor
-c = conn.cursor()
+# create a cursor object from connection
+c = conn.cursor() #cursor is used to execute sql commands
 
-# create a table
+# execute a sql command to create a table
 c.execute("""CREATE TABLE customers(
-          first_name DATATYPE,
-          last_name DATATYPE,
-          email DATATYPE
-
+          first_name text,
+          last_name text,
+          email text
 )
-
 """)
+
+#commit changes
+conn.commit()
+
+#close connection(optional)
+conn.close()
